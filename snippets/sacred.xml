@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <project path="manifest" name="manifest" remote="aex" />
-  <project path="build/make" name="platform_build" remote="aex" >
+  <project path="manifest" name="manifest" remote="sacred" />
+  <project path="build/make" name="build" remote="sacred" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -12,15 +12,15 @@
     <linkfile src="tools" dest="build/tools" />
   </project>
   <project path="build/kati" name="platform_build_kati" groups="pdk,tradefed" remote="aex" />
-  <project path="build/soong" name="platform_build_soong" groups="pdk,tradefed" remote="aex" >
+  <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="sacred" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
 
-  <project path="bionic" name="platform_bionic" groups="pdk" remote="aex" />
+  <project path="bionic" name="bionic" groups="pdk" remote="sacred" />
   <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="aex" />
   <project path="development" name="platform_development" groups="pdk-cw-fs,pdk-fs" remote="aex" />
-  <project path="device/aosp/sepolicy" name="platform_device_aosp_sepolicy" remote="aex" />
+  <project path="device/sacred/sepolicy" name="device_sacred_sepolicy" remote="sacred" />
   <project path="external/connectivity" name="platform_external_connectivity" groups="pdk" remote="aex" />
   <project path="external/ebtables" name="platform_external_ebtables" groups="pdk" remote="aex" />
   <project path="external/exfat" name="platform_external_exfat" remote="aex" />
@@ -38,11 +38,11 @@
   <project path="external/wpa_supplicant_8" name="platform_external_wpa_supplicant_8" groups="pdk" remote="aex" />
   <project path="external/DUtils" name="platform_external_DUtils" remote="aex" />
   <project path="frameworks/av" name="platform_frameworks_av" groups="pdk" remote="aex" />
-  <project path="frameworks/base" name="platform_frameworks_base" remote="aex" />
+  <project path="frameworks/base" name="frameworks_base" remote="sacred" />
   <project path="frameworks/native" name="platform_frameworks_native" groups="pdk" remote="aex" />
   <project path="frameworks/opt/telephony" name="platform_frameworks_opt_telephony" groups="pdk" remote="aex" />
-  <project path="hardware/aosp/interfaces" name="platform_hardware_aosp_interfaces" remote="aex" >
-      <copyfile dest="hardware/aosp/Android.bp" src="Android.bp"/>
+  <project path="hardware/sacred/interfaces" name="hardware_sacred_interfaces" remote="sacred" >
+      <copyfile dest="hardware/sacred/Android.bp" src="Android.bp"/>
   </project>
   <project path="hardware/broadcom/libbt" name="platform_hardware_broadcom_libbt" groups="pdk" remote="aex" />
   <project path="hardware/interfaces" name="platform_hardware_interfaces" groups="pdk" remote="aex" />
@@ -59,13 +59,12 @@
   <project path="packages/apps/Messaging" name="platform_packages_apps_Messaging" groups="pdk-fs" remote="aex" />
   <project path="packages/apps/FMRadio" name="platform_packages_apps_FMRadio" remote="aex" />
   <project path="packages/apps/Gallery2" name="platform_packages_apps_Gallery2" groups="pdk-fs" remote="aex" />
-  <project path="packages/apps/Launcher3" name="platform_packages_apps_Launcher3" groups="pdk-fs" remote="aex" />
+  <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" groups="pdk-fs" remote="sacred" />
   <project path="packages/apps/Settings" name="platform_packages_apps_Settings" groups="pdk-fs" remote="aex" />
   <project path="packages/inputmethods/LatinIME" name="platform_packages_inputmethods_LatinIME" groups="pdk-fs" remote="aex" />
   <project path="packages/apps/PackageInstaller" name="platform_packages_apps_PackageInstaller" groups="pdk-cw-fs,pdk-fs" remote="aex" />
   <project path="packages/apps/Nfc" name="platform_packages_apps_Nfc" groups="apps_nfc,pdk-fs" remote="aex" />
-  <project path="packages/apps/Extensions" name="platform_packages_apps_Extensions" remote="aex" />
-  <project path="packages/apps/AEXOTA" name="platform_packages_apps_AEXOTA" groups="pdk-fs" remote="aex" />
+  <project path="packages/apps/CelestialWays" name="packages_apps_CelestialWays" remote="sacred" />
   <project path="packages/apps/SlimRecents" name="platform_packages_apps_SlimRecents" groups="pdk-fs" remote="aex" />
   <project path="packages/providers/MediaProvider" name="platform_packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" remote="aex" />
   <project path="packages/providers/TelephonyProvider" name="platform_packages_providers_TelephonyProvider" groups="pdk-cw-fs,pdk-fs" remote="aex" />
@@ -83,7 +82,7 @@
   <project path="system/nfc" name="platform_system_nfc" groups="pdk" remote="aex" />
   <project path="system/sepolicy" name="platform_system_sepolicy" groups="pdk" remote="aex" />
   <project path="system/vold" name="platform_system_vold" groups="pdk" remote="aex" />
-  <project path="vendor/aosp" name="platform_vendor_aosp" remote="aex" />
+  <project path="vendor/sacred" name="vendor_sacred" remote="sacred" />
 
   <!-- Ant Wireless -->
   <project path="external/ant-wireless/ant_native" name="platform_external_ant-wireless_ant_native" remote="aex" />
@@ -103,7 +102,7 @@
   <!-- HALs -->
   <project path="hardware/qcom/gps" name="platform_hardware_qcom_gps" groups="qcom,qcom_gps" remote="aex" />
   <project path="hardware/qcom/keymaster" name="platform_hardware_qcom_keymaster" groups="qcom,qcom_keymaster,pdk" remote="aex" />
-  <project path="hardware/qcom/power" name="platform_hardware_qcom_power" groups="qcom,pdk" remote="aex" />
+  <project path="hardware/qcom/power" name="hardware_qcom_power" groups="qcom,pdk" remote="sacred" />
   <project path="hardware/ril-caf" name="platform_hardware_ril" groups="pdk" remote="aex" revision="8.1.x-caf" />
   <project path="system/qcom" name="platform_system_qcom" groups="pdk" remote="aex" />
   <project path="hardware/qcom/bt" name="platform_hardware_qcom_bt" groups="qcom" remote="aex" />
